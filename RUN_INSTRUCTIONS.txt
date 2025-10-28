@@ -1,0 +1,83 @@
+================================================================================
+                    HOW TO RUN new.py
+================================================================================
+
+QUICK START
+-----------
+1. Double-click: test_run.bat
+2. Follow the instructions shown
+
+OR
+
+COMMAND LINE
+------------
+Open Command Prompt in this folder and run:
+
+    venv\Scripts\python.exe new.py "your_audio_file.mp3"
+
+Replace "your_audio_file.mp3" with the actual path to your file.
+
+
+SUPPORTED FILE FORMATS
+----------------------
+Audio: .mp3, .wav, .ogg, .m4a
+Video: .mp4, .avi, .mov (audio will be extracted automatically)
+
+
+EXAMPLES
+--------
+1. With a local MP3 file:
+   venv\Scripts\python.exe new.py "meeting_recording.mp3"
+
+2. With a video file:
+   venv\Scripts\python.exe new.py "zoom_meeting.mp4"
+
+3. With full path:
+   venv\Scripts\python.exe new.py "C:\Users\YourName\Downloads\audio.mp3"
+
+4. Show help:
+   venv\Scripts\python.exe new.py --help
+
+
+WHAT THE SCRIPT DOES
+--------------------
+1. Loads your AssemblyAI API key from .env file
+2. Extracts audio from video files (if needed)
+3. Transcribes the audio using AssemblyAI
+4. Generates a bullet-point summary
+5. Creates a PDF file: meeting_summary.pdf
+6. Displays results in the console
+
+
+PREREQUISITES
+-------------
+✅ Python virtual environment (venv folder exists)
+✅ Dependencies installed (run: venv\Scripts\pip.exe install -r requirements.txt)
+✅ .env file with ASSEMBLYAI_API_KEY configured
+
+
+TROUBLESHOOTING
+---------------
+❌ "ASSEMBLYAI_API_KEY not found"
+   → Check your .env file exists and contains:
+     ASSEMBLYAI_API_KEY=your_actual_api_key_here
+
+❌ "File not found"
+   → Verify the file path is correct
+   → Use quotes around paths with spaces
+
+❌ Import errors or "No module named..."
+   → Install dependencies:
+     venv\Scripts\pip.exe install -r requirements.txt
+
+❌ Script doesn't run
+   → Make sure you're using the virtual environment Python:
+     venv\Scripts\python.exe new.py "file.mp3"
+
+
+NEED HELP?
+----------
+Run the setup checker:
+    venv\Scripts\python.exe check_setup.py
+
+================================================================================

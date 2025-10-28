@@ -1,0 +1,46 @@
+# Environment variables
+# Never commit sensitive keys or secrets!
+.env
+.env.*
+
+# Python Virtual Environments
+# This covers your 'venv' folder and other common names
+venv/
+env/
+.venv/
+.env/
+*_env/
+
+# Python bytecode and cache
+# These are generated automatically
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE & Editor files
+# Prevents user-specific settings from being shared
+.vscode/
+.idea/
+
+# Operating System specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build, distribution, and testing
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Log files
+*.log
+logs/
+
+# Media/Uploads
+# Assuming 'media' is for user-uploaded audio/video files
+/media/

@@ -1,0 +1,4 @@
+assemblyai
+moviepy
+reportlab
+python-dotenv
