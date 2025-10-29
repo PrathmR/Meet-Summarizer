@@ -44,3 +44,12 @@ logs/
 # Media/Uploads
 # Assuming 'media' is for user-uploaded audio/video files
 /media/
+
+# Generated Output Files
+# Don't commit generated transcripts and summaries
+/output_summaries/
+/uploads/
+
+# Temporary files
+temp_audio.mp3
+*.tmp

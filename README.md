@@ -1,69 +1,107 @@
-# How to Run new.py
+# Meet Summarizer
+
+AI-powered meeting transcription and summarization tool using AssemblyAI. Automatically extracts audio from videos, generates full transcripts, and creates bullet-point summaries.
+
+## Features
+
+- 🎬 **Video Support**: Automatically extracts audio from video files (MP4, AVI, MOV)
+- 📝 **Full Transcription**: Complete word-by-word transcript saved as `.txt`
+- 📄 **Summary PDF**: Bullet-point summaries with highlighted key terms
+- 📁 **Organized Output**: Each file gets its own timestamped folder
 
 ## Prerequisites
 
-1. **Python Virtual Environment**: Already set up in `venv/` directory
-2. **Dependencies**: Install required packages
-3. **API Key**: Configure AssemblyAI API key in `.env` file
+- Python 3.8+
+- AssemblyAI API Key ([Get one free](https://www.assemblyai.com/))
 
-## Step 1: Install Dependencies
+## Installation
 
-Open Command Prompt in this directory and run:
-
-```cmd
-venv\Scripts\pip.exe install -r requirements.txt
+1. **Clone the repository**
+```bash
+git clone <your-repo-url>
+cd Meet_Summarizer
 ```
 
-## Step 2: Configure API Key
+2. **Create a virtual environment**
+```bash
+python -m venv venv
+```
 
-Make sure your `.env` file contains your AssemblyAI API key:
+3. **Activate the virtual environment**
+   - Windows:
+     ```cmd
+     venv\Scripts\activate
+     ```
+   - Linux/Mac:
+     ```bash
+     source venv/bin/activate
+     ```
 
+4. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+5. **Configure API Key**
+
+Create a `.env` file in the root directory:
 ```
 ASSEMBLYAI_API_KEY=your_actual_api_key_here
 ```
 
-## Step 3: Run the Script
+## Usage
 
-### Basic Usage
-
-```cmd
-venv\Scripts\python.exe new.py "path\to\your\audio_or_video_file.mp3"
+Run the application:
+```bash
+python app.py
 ```
 
-### Example with a test file
-
-```cmd
-venv\Scripts\python.exe new.py "venv\Lib\site-packages\pyannote\audio\sample\sample.wav"
+When prompted, enter the path to your audio or video file:
 ```
-
-### Get Help
-
-```cmd
-venv\Scripts\python.exe new.py --help
+📁 Enter audio/video file path: D:\Meet_Summarizer\media\your_file.mp4
 ```
 
 ## Supported File Formats
 
-- **Video**: `.mp4`, `.avi`, `.mov`
+- **Video**: `.mp4`, `.mov`, `.avi`
 - **Audio**: `.mp3`, `.wav`, `.ogg`, `.m4a`
 
-## Output
+## Output Structure
 
-The script will:
-1. Extract audio from video files (if needed)
-2. Transcribe the audio using AssemblyAI
-3. Generate a summary in bullet points
-4. Create a PDF file: `meeting_summary.pdf`
-5. Display the results in the console
+```
+output_summaries/
+└── YourFileName_20251029_183835/
+    ├── transcript.txt    # Full transcription
+    └── summary.pdf       # Bullet-point summary
+```
+
+## Project Structure
+
+```
+Meet_Summarizer/
+├── app.py                 # Main application
+├── requirements.txt       # Python dependencies
+├── .env                   # API key (don't commit!)
+├── .gitignore            # Git ignore rules
+├── media/                # Input files (optional)
+├── uploads/              # Temporary audio files
+└── output_summaries/     # Generated transcripts & summaries
+```
 
 ## Troubleshooting
 
 ### Error: "ASSEMBLYAI_API_KEY not found"
-- Check your `.env` file exists and contains the correct API key
+- Ensure `.env` file exists in the root directory
+- Check that the API key is correctly set
 
 ### Error: "File not found"
 - Verify the file path is correct
-- Use quotes around paths with spaces
+- Paths with spaces can be entered with or without quotes
 
 ### Import Errors
-- Run: `venv\Scripts\pip.exe install -r requirements.txt`
+- Make sure virtual environment is activated
+- Run: `pip install -r requirements.txt`
+
+## License
+
+MIT License
